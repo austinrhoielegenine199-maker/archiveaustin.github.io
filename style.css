@@ -18,7 +18,6 @@
 
 body {
     min-height: 100vh;
-
     background:
         radial-gradient(
             circle at 15% 10%,
@@ -31,23 +30,16 @@ body {
             transparent 30%
         ),
         var(--background);
-
     color: var(--text);
-
     font-family: 'Inter', Arial, sans-serif;
-
     line-height: 1.7;
 }
 
 body::before {
     content: "";
-
     position: fixed;
-
     inset: 0;
-
     pointer-events: none;
-
     background-image:
         linear-gradient(
             rgba(255,255,255,0.025) 1px,
@@ -58,9 +50,7 @@ body::before {
             rgba(255,255,255,0.025) 1px,
             transparent 1px
         );
-
     background-size: 45px 45px;
-
     mask-image: linear-gradient(
         to bottom,
         black,
@@ -70,80 +60,56 @@ body::before {
 
 main {
     width: 90%;
-
     max-width: 760px;
-
     margin: auto;
-
     padding: 70px 0;
 }
 
 .profile {
     text-align: center;
-
     padding: 45px 30px;
-
     margin-bottom: 55px;
-
     border: 1px solid var(--border);
-
     border-radius: 24px;
-
     background: var(--card);
-
     backdrop-filter: blur(18px);
-
     box-shadow:
         0 20px 80px rgba(0, 0, 0, 0.35);
-
     animation: appear 0.8s ease both;
 }
 
 .profile-picture {
     width: 125px;
-
     height: 125px;
-
     margin: 0 auto 25px;
-
     border-radius: 50%;
-
     padding: 3px;
-
     background:
         linear-gradient(
             135deg,
             var(--accent),
             var(--accent-two)
         );
-
     box-shadow:
         0 0 35px rgba(139, 124, 255, 0.35);
 }
 
 .profile-picture img {
     width: 100%;
-
     height: 100%;
-
     border-radius: 50%;
-
     object-fit: cover;
-
     border: 4px solid #101014;
 }
 
 h1 {
     font-size: clamp(36px, 7vw, 54px);
-
     letter-spacing: -2px;
-
     margin-bottom: 6px;
 }
 
 .also-known {
     color: var(--muted);
-
     font-size: 15px;
 }
 
@@ -153,38 +119,26 @@ h1 {
 
 .role {
     display: inline-block;
-
     margin-top: 15px;
-
     padding: 7px 15px;
-
     border-radius: 999px;
-
     color: #c7c1ff;
-
     background: rgba(139, 124, 255, 0.1);
-
     border: 1px solid rgba(139, 124, 255, 0.2);
-
     font-size: 13px;
 }
 
 section {
     margin-bottom: 45px;
-
     padding: 30px;
-
     border-radius: 20px;
-
     border: 1px solid var(--border);
-
     background:
         linear-gradient(
             135deg,
             rgba(255,255,255,0.035),
             rgba(255,255,255,0.01)
         );
-
     transition:
         transform 0.25s ease,
         border-color 0.25s ease,
@@ -193,10 +147,8 @@ section {
 
 section:hover {
     transform: translateY(-4px);
-
     border-color:
         rgba(139, 124, 255, 0.35);
-
     background:
         linear-gradient(
             135deg,
@@ -207,25 +159,17 @@ section:hover {
 
 h2 {
     display: flex;
-
     align-items: center;
-
     gap: 10px;
-
     font-size: 21px;
-
     margin-bottom: 25px;
 }
 
 h2::before {
     content: "";
-
     width: 4px;
-
     height: 22px;
-
     border-radius: 10px;
-
     background:
         linear-gradient(
             var(--accent),
@@ -243,53 +187,38 @@ h2::before {
 
 h3 {
     font-size: 16px;
-
     margin-bottom: 10px;
-
     color: #eeeeee;
 }
 
 p {
     color: var(--muted);
-
     font-size: 14px;
 }
 
 ul {
     list-style: none;
-
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 10px;
 }
 
 li {
     padding: 8px 13px;
-
     color: #bdbdc6;
-
     background: rgba(255,255,255,0.04);
-
     border: 1px solid var(--border);
-
     border-radius: 10px;
-
     font-size: 13px;
-
     transition: 0.2s ease;
 }
 
 li:hover {
     color: white;
-
     background:
         rgba(139, 124, 255, 0.12);
-
     border-color:
         rgba(139, 124, 255, 0.3);
-
     transform: translateY(-2px);
 }
 
@@ -299,19 +228,14 @@ li::before {
 
 footer {
     text-align: center;
-
     margin-top: 70px;
-
     padding: 25px;
-
     color: #55555f;
 }
 
 footer a {
     color: #888894;
-
     text-decoration: none;
-
     transition: 0.2s ease;
 }
 
@@ -321,20 +245,17 @@ footer a:hover {
 
 footer span {
     margin: 0 12px;
-
     color: #3d3d45;
 }
 
 @keyframes appear {
     from {
         opacity: 0;
-
         transform: translateY(20px);
     }
 
     to {
         opacity: 1;
-
         transform: translateY(0);
     }
 }
@@ -357,4 +278,4 @@ footer span {
         font-size: 38px;
     }
 
-    }
+}
