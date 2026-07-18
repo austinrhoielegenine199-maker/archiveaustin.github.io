@@ -8,8 +8,6 @@
 
 :root {
     --background: #060608;
-    --card: rgba(14, 14, 19, 0.78);
-    --border: rgba(139, 124, 255, 0.16);
     --text: #eeeeF2;
     --muted: #85858f;
     --accent: #7568d9;
@@ -23,13 +21,7 @@ html {
 body {
     min-height: 100vh;
 
-    background:
-        radial-gradient(
-            circle at 50% -20%,
-            rgba(80, 70, 160, 0.12),
-            transparent 40%
-        ),
-        #060608;
+    background: #060608;
 
     color: var(--text);
 
@@ -38,9 +30,11 @@ body {
     line-height: 1.7;
 
     overflow-x: hidden;
+
+    position: relative;
 }
 
-/* Subtle grid overlay */
+/* SUBTLE GRID */
 
 body::before {
     content: "";
@@ -64,17 +58,28 @@ body::before {
 
     background-size: 45px 45px;
 
-    mask-image:
-        linear-gradient(
-            to bottom,
-            black,
-            transparent 85%
-        );
-
-    z-index: -1;
+    z-index: 0;
 }
 
-/* MAIN */
+/* MATRIX BACKGROUND */
+
+#matrix {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    opacity: 0.22;
+}
+
+/* CONTENT ABOVE MATRIX */
 
 main {
     position: relative;
@@ -99,24 +104,29 @@ main {
 
     margin-bottom: 55px;
 
-    border: 1px solid rgba(139, 124, 255, 0.18);
+    border: 1px solid
+        rgba(139, 124, 255, 0.2);
 
     border-radius: 24px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(20, 18, 30, 0.86),
-            rgba(10, 10, 15, 0.78)
+            rgba(20, 18, 30, 0.82),
+            rgba(10, 10, 15, 0.72)
         );
 
-    backdrop-filter: blur(18px);
+    backdrop-filter: blur(14px);
 
     box-shadow:
-        0 0 35px rgba(117, 104, 217, 0.12),
-        0 20px 80px rgba(0, 0, 0, 0.45);
+        0 0 35px
+        rgba(117, 104, 217, 0.15),
 
-    animation: appear 0.8s ease both;
+        0 20px 80px
+        rgba(0, 0, 0, 0.45);
+
+    animation:
+        appear 0.8s ease both;
 }
 
 /* PROFILE PICTURE */
@@ -140,7 +150,8 @@ main {
         );
 
     box-shadow:
-        0 0 35px rgba(139, 124, 255, 0.35);
+        0 0 35px
+        rgba(139, 124, 255, 0.4);
 
     animation:
         floatingProfile 3s ease-in-out infinite;
@@ -158,7 +169,7 @@ main {
     border: 4px solid #101014;
 }
 
-/* TEXT */
+/* TITLE */
 
 h1 {
     font-size: clamp(36px, 7vw, 54px);
@@ -177,6 +188,8 @@ h1 {
 .also-known span {
     color: #c3c3ca;
 }
+
+/* ROLE */
 
 .role {
     display: inline-block;
@@ -250,7 +263,7 @@ h1 {
     letter-spacing: 0.3px;
 }
 
-/* SECTIONS */
+/* ALL CONTENT BOXES */
 
 section {
     margin-bottom: 45px;
@@ -265,15 +278,15 @@ section {
     background:
         linear-gradient(
             135deg,
-            rgba(20, 18, 30, 0.82),
-            rgba(10, 10, 15, 0.72)
+            rgba(20, 18, 30, 0.78),
+            rgba(10, 10, 15, 0.68)
         );
 
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(12px);
 
     box-shadow:
         0 0 25px
-        rgba(117, 104, 217, 0.08);
+        rgba(117, 104, 217, 0.09);
 
     transition:
         transform 0.25s ease,
@@ -289,7 +302,7 @@ section:hover {
 
     box-shadow:
         0 0 35px
-        rgba(117, 104, 217, 0.18);
+        rgba(117, 104, 217, 0.2);
 }
 
 /* HEADINGS */
@@ -373,8 +386,7 @@ li {
 
     font-size: 13px;
 
-    transition:
-        0.2s ease;
+    transition: 0.2s ease;
 }
 
 li:hover {
@@ -500,4 +512,4 @@ footer span {
         font-size: 38px;
     }
 
-    }
+}
