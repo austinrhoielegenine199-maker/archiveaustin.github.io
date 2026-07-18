@@ -13,7 +13,7 @@
 
 <body>
 
-    <!-- MATRIX HACKER BACKGROUND -->
+    <!-- MATRIX BACKGROUND -->
 
     <canvas id="matrix"></canvas>
 
@@ -50,6 +50,7 @@
 
         </div>
 
+
         <!-- ABOUT ME -->
 
         <section>
@@ -68,6 +69,7 @@
 
             </div>
 
+
             <div class="info-block">
 
                 <h3>🎮 Minecraft Development</h3>
@@ -80,6 +82,7 @@
                 </p>
 
             </div>
+
 
             <div class="info-block">
 
@@ -94,6 +97,7 @@
             </div>
 
         </section>
+
 
         <!-- SKILLS -->
 
@@ -125,6 +129,7 @@
 
         </section>
 
+
         <!-- PROGRAMMING JOURNEY -->
 
         <section>
@@ -141,6 +146,7 @@
 
             </div>
 
+
             <div class="info-block">
 
                 <h3>📚 Currently Learning</h3>
@@ -153,11 +159,13 @@
 
         </section>
 
+
         <!-- PROJECTS -->
 
         <section>
 
             <h2>🧩 Projects</h2>
+
 
             <div class="info-block">
 
@@ -165,34 +173,26 @@
 
                 <p>
                     A Minecraft security plugin focused on protecting
-                    servers from unauthorized operator access.
+                    servers from unauthorized operator access and
+                    suspicious permission activity.
                 </p>
 
             </div>
 
-            <div class="info-block">
-
-                <h3>⚙️ NyrethianCore</h3>
-
-                <p>
-                    A custom Minecraft core system designed for server
-                    management, economy systems, teams, homes, and more.
-                </p>
-
-            </div>
 
             <div class="info-block">
 
-                <h3>📢 NyrethaAnnounce</h3>
+                <h3>🔗 DiscordHookSRV</h3>
 
                 <p>
-                    A custom announcement plugin with titles, sounds,
-                    reload support, and screen notifications.
+                    A custom Minecraft plugin designed to connect server
+                    events and systems with Discord.
                 </p>
 
             </div>
 
         </section>
+
 
         <!-- FOOTER -->
 
@@ -204,14 +204,19 @@
 
             <p>
 
-                <a href="https://github.com/archiveaustin" target="_blank">
+                <a href="https://github.com/archiveaustin"
+                   target="_blank">
+
                     GitHub
+
                 </a>
 
                 <span>•</span>
 
                 <a href="https://archiveaustin.ddns.net">
+
                     Portfolio
+
                 </a>
 
             </p>
@@ -220,7 +225,8 @@
 
     </main>
 
-    <!-- MATRIX ANIMATION -->
+
+    <!-- GREEN MATRIX ANIMATION -->
 
     <script>
 
@@ -229,6 +235,7 @@
 
         const ctx =
             canvas.getContext("2d");
+
 
         function resize() {
 
@@ -240,97 +247,160 @@
 
         }
 
+
         resize();
+
 
         const chars =
             "アァカサタナハマヤャラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+
         const fontSize = 14;
+
 
         let columns =
             Math.floor(
                 canvas.width / fontSize
             );
 
+
         let drops =
             Array(columns).fill(1);
+
 
         function draw() {
 
             ctx.fillStyle =
                 "rgba(6, 6, 8, 0.08)";
 
+
             ctx.fillRect(
+
                 0,
+
                 0,
+
                 canvas.width,
+
                 canvas.height
+
             );
 
+
+            /* GREEN MATRIX LETTERS */
+
             ctx.fillStyle =
-                "#7568d9";
+                "#00ff66";
+
+
+            ctx.shadowColor =
+                "#00ff66";
+
+
+            ctx.shadowBlur =
+                8;
+
 
             ctx.font =
                 fontSize + "px monospace";
 
+
             for (
+
                 let i = 0;
+
                 i < drops.length;
+
                 i++
+
             ) {
+
 
                 const text =
                     chars[
+
                         Math.floor(
+
                             Math.random() *
+
                             chars.length
+
                         )
+
                     ];
 
+
                 ctx.fillText(
+
                     text,
 
                     i * fontSize,
 
                     drops[i] * fontSize
+
                 );
 
+
                 if (
+
                     drops[i] * fontSize >
+
                     canvas.height &&
+
                     Math.random() > 0.975
+
                 ) {
 
                     drops[i] = 0;
 
                 }
 
+
                 drops[i]++;
+
 
             }
 
+
+            ctx.shadowBlur = 0;
+
         }
 
+
         setInterval(
+
             draw,
+
             35
+
         );
 
+
         window.addEventListener(
+
             "resize",
 
             () => {
 
+
                 resize();
 
+
                 columns =
+
                     Math.floor(
+
                         canvas.width /
+
                         fontSize
+
                     );
 
+
                 drops =
+
                     Array(columns).fill(1);
+
 
             }
 
@@ -340,4 +410,4 @@
 
 </body>
 
-                </html>
+</html>
